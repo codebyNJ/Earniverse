@@ -10,18 +10,18 @@ interface SpinningWheelProps {
 export function SpinningWheel({ isSpinning }: SpinningWheelProps) {
   const canvasRef = useRef<HTMLCanvasElement>(null)
 
-  const segments = [
-    { text: "50 Points", color: "#FFF176" },
-    { text: "Badge", color: "#81D4FA" },
-    { text: "High Five", color: "#C5E1A5" },
-    { text: "Certificate", color: "#FFF176" },
-    { text: "Quote", color: "#81D4FA" },
-    { text: "Study Tip", color: "#C5E1A5" },
-    { text: "E-book", color: "#FFF176" },
-    { text: "Try Again", color: "#81D4FA" },
-  ]
-
   useEffect(() => {
+    const segments = [
+      { text: "50 Points", color: "#FFF176" },
+      { text: "Badge", color: "#81D4FA" },
+      { text: "High Five", color: "#C5E1A5" },
+      { text: "Certificate", color: "#FFF176" },
+      { text: "Quote", color: "#81D4FA" },
+      { text: "Study Tip", color: "#C5E1A5" },
+      { text: "E-book", color: "#FFF176" },
+      { text: "Try Again", color: "#81D4FA" },
+    ]
+
     const canvas = canvasRef.current
     if (!canvas) return
 
@@ -81,7 +81,7 @@ export function SpinningWheel({ isSpinning }: SpinningWheelProps) {
     ctx.closePath()
     ctx.fillStyle = "#000"
     ctx.fill()
-  }, [segments])
+  }, []) // Empty dependency array means this effect runs once on mount
 
   return (
     <div className="relative">
@@ -101,4 +101,3 @@ export function SpinningWheel({ isSpinning }: SpinningWheelProps) {
     </div>
   )
 }
-

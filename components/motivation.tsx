@@ -70,7 +70,7 @@ export function Motivation() {
             </h2>
             <p className="text-lg text-black mb-8 font-fredoka">
               Our platform is designed to help you unlock your full potential and achieve your academic goals. With
-              personalized guidance and motivation, you'll be on your way to becoming the best version of yourself.
+              personalized guidance and motivation, you&apos;ll be on your way to becoming the best version of yourself.
             </p>
 
             <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 mb-8">
