@@ -3,25 +3,162 @@
 @tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: 45, 30%, 94%;
+  --foreground: 210, 20%, 20%;
+
+  --card: 45, 30%, 94%;
+  --card-foreground: 210, 20%, 20%;
+
+  --popover: 45, 30%, 94%;
+  --popover-foreground: 210, 20%, 20%;
+
+  --primary: 50, 90%, 80%;
+  --primary-foreground: 210, 20%, 20%;
+
+  --secondary: 190, 80%, 80%;
+  --secondary-foreground: 210, 20%, 20%;
+
+  --muted: 45, 20%, 90%;
+  --muted-foreground: 210, 20%, 40%;
+
+  --accent: 120, 60%, 80%;
+  --accent-foreground: 210, 20%, 20%;
+
+  --destructive: 0, 100%, 50%;
+  --destructive-foreground: 210, 10%, 98%;
+
+  --border: 45, 30%, 85%;
+  --input: 45, 30%, 85%;
+  --ring: 50, 90%, 80%;
+
+  --radius: 0.5rem;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@layer base {
+  body {
+    @apply bg-background text-foreground;
   }
 }
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+/* Custom colors */
+.bg-beige {
+  background-color: #f5f0e5;
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
+.bg-beige-light {
+  background-color: #f9f6f0;
+}
+
+.bg-beige-dark {
+  background-color: #e8e0d0;
+}
+
+.from-beige {
+  --tw-gradient-from: #f5f0e5;
+  --tw-gradient-to: #f5f0e500;
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+}
+
+.to-beige {
+  --tw-gradient-to: #f5f0e5;
+}
+
+/* Font classes */
+.font-bungee {
+  font-family: "Bungee Shade", sans-serif;
+}
+
+.font-cabin {
+  font-family: "Cabin Sketch", cursive;
+}
+
+.font-fredoka {
+  font-family: "Fredoka", sans-serif;
+}
+
+.font-pacifico {
+  font-family: "Pacifico", cursive;
+}
+
+/* Animations */
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0px);
   }
 }
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes bounce {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-15px);
+  }
+}
+
+.animate-bounce-slow {
+  animation: bounce 4s ease-in-out infinite;
+}
+
+@keyframes wiggle {
+  0%,
+  100% {
+    transform: rotate(-3deg);
+  }
+  50% {
+    transform: rotate(3deg);
+  }
+}
+
+.animate-wiggle {
+  animation: wiggle 2s ease-in-out infinite;
+}
+
+@keyframes pulse-scale {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+.animate-pulse-scale {
+  animation: pulse-scale 3s ease-in-out infinite;
+}
+
+/* Grid pattern */
+.grid-pattern {
+  background-size: 50px 50px;
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 0.1) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(0, 0, 0, 0.1) 1px, transparent 1px);
+}
+
+/* Card effects */
+.card-hover-1:hover {
+  transform: translateY(-10px) rotate(2deg);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+.card-hover-2:hover {
+  transform: scale(1.05);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+.card-hover-3:hover {
+  transform: translateY(-5px) translateX(5px);
+  box-shadow: -10px 10px 0px rgba(0, 0, 0, 0.2);
+}
+
