@@ -42,7 +42,7 @@ export function CongratulationsPopup({ prize, onClose }: CongratulationsPopupPro
             <h2 className="text-2xl font-bold text-black mb-2 font-cabin">Congratulations!</h2>
 
             <div className="relative mb-6">
-              <p className="text-lg text-black font-fredoka">You've won:</p>
+              <p className="text-lg text-black font-fredoka">You&apos;ve won:</p>
               <motion.div
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
